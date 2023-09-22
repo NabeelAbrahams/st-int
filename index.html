@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo Tech Challenge</title>
+    <!-- Include TailwindCSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="text-4xl flex justify-center my-16 w-screen" id="heading">
+      #todo
+    </div>
+    <div id="app" class="flex flex-col items-center">
+      <div id="nav" class="flex w-screen justify-center">
+        <ul class="flex justify-between w-6/12">
+          <div id="active-menu">
+            <li>All</li>
+          </div>
+          <li>Active</li>
+          <li>Completed</li>
+        </ul>
+      </div>
+      <div id="bar" class="flex w-screen justify-center">
+        <div class="w-8/12 border-4 my-4"></div>
+      </div>
+      <div id="add-form" class="flex w-full justify-center">
+        <div
+          id="text-box"
+          class="flex justify-center items-center mx-8 p-8 border-2 w-1/2"
+        >
+          <form action="">
+            <input
+              type="text"
+              id="new-item"
+              class="form-control"
+              placeholder="Enter your todo item..."
+            />
+            <div id="add-button" class="flex">
+              <button class="bg-blue-400 p-4">add</button>
+            </div>
+          </form>
+        </div>
+        <div id="items">
+          <div id="item-list"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    let addForm = document.getElementById("add-form");
+
+    let itemList = [];
+
+    addForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      let item = document.getElementById("new-item");
+
+      // perform operation with form input
+      alert("Todo added!");
+      console.log(`Todo: ${item.value}!`);
+
+      item.value = "";
+    });
+  </script>
+</html>
